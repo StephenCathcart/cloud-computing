@@ -1,0 +1,24 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "serviceBusNamespaceName": {
+            "value": "sb-stephencathcart"
+        },
+        "serviceBusTopicName": {
+            "value": "speed-camera-topic"
+        },
+        "serviceBusDefaultSubscriptionName": {
+            "value": "default-subscription"
+        },
+		"serviceBusPoliceSubscriptionName": {
+            "value": "police-subscription"
+        },
+		"serviceBusQueueName": {
+            "value": "vehicle-check-queue"
+        },
+        "serviceBusApiVersion": {
+            "value": "2015-08-01"
+        }
+    }
+}

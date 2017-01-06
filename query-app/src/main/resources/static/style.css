@@ -1,0 +1,47 @@
+.container {
+    max-width: 800px;
+}
+.header {
+    margin-top: 6rem;
+    text-align: center; 
+}
+.chart {
+    text-align: center; 
+}
+.cameras-section {
+    border-top: 1px solid #eee;
+    padding: 4rem 0;
+    margin-bottom: 0;
+}
+.priority-section {
+    border-top: 1px solid #eee;
+    padding: 4rem 0;
+    margin-bottom: 0;
+}
+.history-section {
+    border-top: 1px solid #eee;
+    padding: 4rem 0;
+    margin-bottom: 0;
+}
+.ct-perfect-fourth:before {
+    padding-bottom: 50%;
+}
+.ct-series-a .ct-bar {
+    stroke: #89bdd3;
+}
+.ct-series-b .ct-bar {
+    stroke: #9ad3de;
+}
+.ct-label {
+    color: #222;
+    font-size: 1.15rem;
+}
+table {
+    border-collapse: collapse;
+}
+table tr:not(thead):hover {
+    background-color: #f5f5f5;
+}
+#priority-table tr {
+    cursor: pointer;
+}

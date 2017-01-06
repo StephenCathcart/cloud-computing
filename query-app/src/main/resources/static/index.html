@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Query App</title>
+        <meta name="description" content="Query Application for CSC8110">
+        <meta name="author" content="Stephen Cathcart">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css" />
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+        <div class="container">
+            <section class="header">
+                <h2 class="title">&Uuml;ber query application</h2>
+                <h5 class="title">for CSC8110</h5>
+                <a id="chart-button" class="button button-primary" href="#">Refresh Chart</a>
+            </section>
+
+            <section class="chart">
+                <caption>Total count of normal &amp; speeding sighting by Camera</caption>
+                <div class="ct-chart ct-perfect-fourth"></div>
+            </section>
+
+            <div class="cameras-section" id="cameras">
+                <table id="cameras-table" class="u-full-width">
+                </table>   
+            </div>
+
+            <div class="priority-section" id="priorities">
+                <table id="priority-table" class="u-full-width">
+                </table>   
+            </div>
+
+            <div class="history-section" id="history">
+                <table id="history-table" class="u-full-width">
+                </table>   
+            </div>
+        </div> 
+
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script src="script.js"></script>
+        <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+    </body>
+</html>
