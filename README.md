@@ -1,4 +1,5 @@
 ##CSC8110 Cloud Computing Coursework
+#####**Total Time: ~40hours**
 
 ###Outline
 
