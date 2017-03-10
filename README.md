@@ -170,7 +170,7 @@ docker pull stephencathcart/vehicle-check
 ####Overview
 Below is the system architecture diagram. This can also be found in the project images folder.
  
-![enter image description here](https://github.com/NCL-CloudComputing/csc8110-1617-stephencathcart/blob/master/images/architecture.png)
+![enter image description here](https://github.com/StephenCathcart/csc8110-cloud-computing/blob/master/images/architecture.png)
 
 Each DockerVM(#) VM is an [Ubuntu Server 16.04 virtual machine with a Docker Engine](https://azure.microsoft.com/en-gb/marketplace/partners/canonicalandmsopentech/dockeronubuntuserver1404lts/) installed. Communication to / from the Azure Service Bus Topic and Queue is through JMS messages. The JMS messages sent from the smart speed camera will include two or three properties, depending on whether or not we're sending a camera registration message or a vehicle Snapshot. A visualisation of the properties are shown below:
 ```docker
