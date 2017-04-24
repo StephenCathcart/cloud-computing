@@ -1,13 +1,13 @@
-##CSC8110 Cloud Computing Coursework
-#####**Total Time: ~40hours**
+## CSC8110 Cloud Computing Coursework
+##### **Total Time: ~40hours**
 
-###Outline
+### Outline
 
 The query application displays a list of camera registrations. Below this list you can view a list of suspicious vehicles (speeding vehicles that are 10% over the speed limit - priority sightings). You may click on a row in the suspicious vehicles table which will generate a third table - a complete trace history of other sightings for that specific suspicious vehicle.
 
 >**Note:** The chart being displayed was not a coursework requirement but I felt it was a good experiment / learning opportunity to practice visualising real-time data. This chart displays a list of all unique smart speed cameras and for each one, shows a count of the total number of vehicle sightings against the amount of speeding vehicle sightings for that camera. 
 
-###Technology Stack
+### Technology Stack
 
 Each application is a Java / [Spring Boot](https://projects.spring.io/spring-boot/) project. I'm familiar with Spring development through my day job however, I've been wanting to play with Spring Boot features for a while so I thought this coursework would be perfect to experiment with it. 
 
