@@ -180,7 +180,8 @@ data: [Serialized Snapshot / SmartSpeedCamera object in JSON format]
 ``` 
  The *speeding* property is what the Topic police-subscription uses for filtering (a snippet of this code is shown above in the Azure CLI section).
 
-The default virtual machine, DockerVM, is standalone and contains the main consumer and query applications. However, the numbered virtual machines (DockerVM2, DockerVM3 etc) are in the same availability set and are therefore set to auto-scale based on the length of the vehicle-check queue; by default only one of these will be running when the number of messages are *low*. Screenshots of these VMs automatically powering up and the scalling options can be found in [images/scaling](https://github.com/NCL-CloudComputing/csc8110-1617-stephencathcart/tree/master/images/scaling).  
+The default virtual machine, DockerVM, is standalone and contains the main consumer and query applications. However, the numbered virtual machines (DockerVM2, DockerVM3 etc) are in the same availability set and are therefore set to auto-scale based on the length of the vehicle-check queue; by default only one of these will be running when the number of messages are *low*. Screenshots of these VMs automatically powering up and the scalling options can be found in [
+/scaling](https://github.com/StephenCathcart/csc8110-cloud-computing/blob/master/images/scaling).  
 
 >**Note:** To ensure that each Docker container is restarted automatically when the VM restarts, I passed the argument --restart="always" when originally running the application container. This has been successfully tested.
 
