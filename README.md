@@ -190,7 +190,7 @@ As mentioned previously, the Azure Java SDK was used to communicate with the Azu
 ####Azure Resources
 Below is a screenshot showing all of my Azure Resources. These all belong under the CSC8110_RG Resource Group:
 
-![enter image description here](https://github.com/NCL-CloudComputing/csc8110-1617-stephencathcart/blob/master/images/resources/resources.png)
+![enter image description here](https://github.com/StephenCathcart/csc8110-cloud-computing/blob/master/images/resources/resources.png)
 
 To allow the JMS applications to communicate with the Azure Service Bus a shared access policy was added which allows them to communicate using the policies connection string primary key.
 
@@ -210,7 +210,7 @@ To view my table data I used the [Microsoft Azure Storage Explorer](http://stora
 
 Using the above partition/row key combination guarantees unique rows as the same camera cannot start up twice at the *exact* same time (even if two identical registration messages were sent for that camera at the same time, the first row would be just be overwritten / updated with the exact same information which makes sense). This allows us to easily query the table for 'all registrations made by the camera with *UID* NCL-GRRD-01', for example. We can also order the results by date order easily, if required. I interpreted the note in Part 3 to mean that it is acceptable to have multiple rows for the same camera i.e. a row for every time the camera starts up. Below is a snippet of my data:
 
-![enter image description here](https://github.com/NCL-CloudComputing/csc8110-1617-stephencathcart/blob/master/images/tables/camera-registrations.PNG)
+![enter image description here](https://github.com/StephenCathcart/csc8110-cloud-computing/blob/master/images/tables/camera-registrations.PNG)
 
 #####Sightings Table
 **Partition Key:** The vehicle registration plate.
@@ -221,7 +221,7 @@ Using the above partition/row key combination guarantees unique rows as the same
 
 Using the above partition/row key combination guarantees unique rows as the same vehicle cannot be tracked by the same camera at the *exact* same time. This also allows us to easily query the table to return a *sightings history* of a specific vehicle registration; this is important for the query in Part 4 - *"Produce a list of all historical sightings of vehicles caught speeding..."*. We can also order the results by date order easily, if required. Below is a snippet of my data:
 
-![enter image description here](https://github.com/NCL-CloudComputing/csc8110-1617-stephencathcart/blob/master/images/tables/sightings.png)
+![enter image description here](https://github.com/StephenCathcart/csc8110-cloud-computing/blob/master/images/tables/sightings.png)
 
 #####SpeedingVehicles Table
 **Partition Key:** The priority level [PRIORITY, NORMAL].
@@ -232,12 +232,12 @@ Using the above partition/row key combination guarantees unique rows as the same
 
 Using the above partition/row key combination guarantees unique rows as the same speeding vehicle cannot be tracked by the same camera at the *exact* same time. A combination of the snapshot time and registration was needed for the row key as each of these on their own isn't enough to make the row unique. For example, using the priority level and snapshot date is error prone as two different vehicles may be a speeding PRIORITY at the exact same time, causing one row to be overwritten. Similarly, using the priority level and registration would cause issues for the same vehicle with repeat offenses - only the latest speeding offense would be saved. This also allows us to easily query the table to return *"a list of all historical sightings of vehicles caught speeding and considered a "PRIORITY""* as per the coursework specification. All that's needed to the Part 4 query is to get all PRIORITY partition key rows and then, for each PRIORITY snapshot, we can get it's vehicle registration and use this as the partition key search in the Sightings table above. Below is a snippet of my data:
 
-![enter image description here](https://github.com/NCL-CloudComputing/csc8110-1617-stephencathcart/blob/master/images/tables/speeding-vehicles.png)
+![enter image description here](https://github.com/StephenCathcart/csc8110-cloud-computing/blob/master/images/tables/speeding-vehicles.png)
 
 ####Azure SQL Database Design
 When a priority speeding vehicle is spotted by the police monitor, it is put in a queue (the vehicle-check-queue). This queue is polled by an auto-scaled service - the vehicle-check application. This simulates a long running check to see if the vehicle is stolen. Once this is finished, the results are saved to a standard SQL database. The JPA Entity *VehicleCheck* stores the vehicles registration, the date the check was performed and whether or not the vehicle was stolen. Below is a screenshot showing the data:
 
-![enter image description here](https://github.com/NCL-CloudComputing/csc8110-1617-stephencathcart/blob/master/images/sqldatabase/vehiclechecks.png)
+![enter image description here](https://github.com/StephenCathcart/csc8110-cloud-computing/blob/master/images/sqldatabase/vehiclechecks.png)
 
 >**Note:** I'm aware that the SQL table may not follow best practices with regards to column / table naming conventions and that only one table was used to store the data. This was mainly implemented as a proof of concept so we have the ability to audit this data in the future. 
 
@@ -297,9 +297,9 @@ A small single-page front-end application was developed to better visualize the 
 
 >**Note:** I've been manually deleting data from the various Azure Table Storage tables during testing. Therefore it's possible that a sightings history produced may be missing the actual speeding row - this is not a bug.
 
-Screenshots of the application can be found in the [images/query](https://github.com/NCL-CloudComputing/csc8110-1617-stephencathcart/tree/master/images/query) folder. Example below:
+Screenshots of the application can be found in the [images/query](https://github.com/StephenCathcart/csc8110-cloud-computing/blob/master/images/query) folder. Example below:
 
-![enter image description here](https://github.com/NCL-CloudComputing/csc8110-1617-stephencathcart/blob/master/images/query/query-app1.png)
+![enter image description here](https://github.com/StephenCathcart/csc8110-cloud-computing/blob/master/images/query/query-app1.png)
 
 
 ####vehicle-check
@@ -312,8 +312,8 @@ Screenshots of the application can be found in the [images/query](https://github
 
 >**Dislike:** My experience of using the new [Microsoft Azure "portal"](https://portal.azure.com) was poor when it came to configuration options on auto-scaling. I found the older ["manage" portal site](https://manage.windowsazure.com) to offer much richer features as shown below.
 
-![enter image description here](https://github.com/NCL-CloudComputing/csc8110-1617-stephencathcart/blob/master/images/scaling/settings.png)
+![enter image description here](https://github.com/StephenCathcart/csc8110-cloud-computing/blob/master/images/scaling/settings.png)
 
 Below is a screenshot of the autoscaling working in action:
 
-![enter image description here](https://github.com/NCL-CloudComputing/csc8110-1617-stephencathcart/blob/master/images/scaling/powering.png)
+![enter image description here](https://github.com/StephenCathcart/csc8110-cloud-computing/blob/master/images/scaling/powering.png)
